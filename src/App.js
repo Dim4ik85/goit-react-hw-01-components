@@ -1,8 +1,16 @@
 import React from "react";
+
 import Profile from "./components/Profile/Profile";
 import user from "./baza/user.json" ;
+
 import statisticalData from "./baza/statistical-data.json";
 import Statistics from "./components/Statistics/Statistics";
+
+import friends from "./baza/friends.json";
+import FriendList from "./components/FriendList/FriendList";
+
+import transactions from "./baza/transactions.json";
+import TransactionHistory from "./components/TransactionHistory/TransactionHistory";
 
 const App = () => {
   return (
@@ -16,9 +24,11 @@ const App = () => {
         />
 
         <Statistics title="Upload stats" stats={statisticalData} />;
-        {/* <Statistics stats={statisticalData} />; */}
-    
-    
+            
+        <FriendList friends={friends} />
+      
+        <TransactionHistory items={transactions} />;
+
     </div>
     
     

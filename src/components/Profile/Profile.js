@@ -1,4 +1,5 @@
 import React from "react";
+import defaultImage from "../photo.jpg";
 
 const Profile = ({avatar,name,tag,location,
   stats: { followers, views, likes },}) => (
@@ -6,7 +7,7 @@ const Profile = ({avatar,name,tag,location,
     <div class="profile">
       <div class="description">
         <img
-          src={avatar}
+          src={avatar || defaultImage}
           alt="Аватар пользователя"
           class="avatar"
         />
@@ -31,5 +32,9 @@ const Profile = ({avatar,name,tag,location,
       </ul>
     </div>
 );
+
+Profile.defaultProps  = {
+  avatar:  defaultImage,
+};
 
 export default Profile;
