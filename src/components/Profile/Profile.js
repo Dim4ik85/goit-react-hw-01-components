@@ -1,5 +1,6 @@
 import React from "react";
 import defaultImage from "../photo.jpg";
+import PropTypes from 'prop-types';
 
 const Profile = ({avatar,name,tag,location,
   stats: { followers, views, likes },}) => (
@@ -35,6 +36,18 @@ const Profile = ({avatar,name,tag,location,
 
 Profile.defaultProps  = {
   avatar:  defaultImage,
+};
+
+Profile.propTypes = {
+  avatar: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    followers: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    likes: PropTypes.number.isRequired,
+  }),
 };
 
 export default Profile;
