@@ -1,16 +1,20 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import s from './Statistics.module.css';
+import generateColor from '../../generateColor/GenerateColor';
 
 const Statistics = ({title,stats}) => (
 
-<section class="statistics">
-    <h2 class="title">{title}</h2>
+<section className={s.statistics}>
+    {title && <h2 className={s.title}>{title}</h2>}
 
-    <ul class="stat-list">
+    <ul className={s.statlist}>
       {stats.map(({id,label,percentage}) => (
-            <li class="item" key={id}>
-              <span class="label">{label}</span>
-              <span class="percentage">{percentage} %</span>
+            <li className={s.item} key={id}
+            style={{backgroundColor: generateColor(),
+            }}>
+              <span className={s.label}>{label}</span>
+              <span className={s.percentage}>{percentage} %</span>
             </li>
           )
         )
