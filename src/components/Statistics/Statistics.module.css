@@ -16,7 +16,7 @@
     text-align: center;
   }
   
-  .statList {
+  .statlist {
     display: flex;
     flex-wrap: wrap;
   }
@@ -24,10 +24,9 @@
   .item {
     display: flex;
     flex-direction: column;
-    /* border: ; */
-    padding: 15px;
+    flex-basis: calc(100% / 5);
     align-items: center;
+    padding: 15px;
     border: 1px solid #696666;
     color: white;
-    flex-basis: calc(100% / 5);
   }
