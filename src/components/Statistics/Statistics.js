@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import s from './Statistics.module.css';
-import generateColor from '../../generateColor/GenerateColor';
+import generateColor from '../../utilities/GenerateColor';
 
 const Statistics = ({title,stats}) => (
 
 <section className={s.statistics}>
     {title && <h2 className={s.title}>{title}</h2>}
-
+    
     <ul className={s.statlist}>
       {stats.map(({id,label,percentage}) => (
             <li className={s.item} key={id}
